@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A92D84F6-9C03-49A6-9857-E9669A41911A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ara2.Components.Upload</RootNamespace>
+    <AssemblyName>Ara2.Components.Upload</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <RestorePackages>true</RestorePackages>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ara2, Version=1.2.6.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ara2.1.2.6.2\lib\net40\Ara2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ara2.AraButton, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ara2.AraButton.1.0.0.2\lib\net40\Ara2.AraButton.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ara2.AraLabel, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ara2.AraLabel.1.0.0.1\lib\net40\Ara2.AraLabel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ara2.AraTextBox, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ara2.AraTextBox.1.0.0.0\lib\net40\Ara2.AraTextBox.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ara2.AraWindow, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ara2.AraWindow.1.0.0.3\lib\net40\Ara2.AraWindow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ara2ComponentsServer\AraUploadButton\AraUploadButton.cs" />
+    <Compile Include="Ara2ComponentsServer\AraUploadForm\AraUploadForm.AraDesign.cs" />
+    <Compile Include="Ara2ComponentsServer\AraUploadForm\AraUploadForm.cs" />
+    <Compile Include="Ara2ComponentsServer\AraUpload\AraUpload.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ara2ComponentsServer\AraUploadForm\AraUploadForm.AraDesign.json" />
+    <Content Include="Ara2\Components\AraUpload\CREDITS.md" />
+    <Content Include="Ara2\Components\AraUpload\LICENSE.md" />
+    <None Include="NuGet\Ara2.Upload.nuspec">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Ara2\Components\AraUpload\AraUpload.js" />
+    <Content Include="Ara2\Components\AraUpload\files\fileuploader.css" />
+    <Content Include="Ara2\Components\AraUpload\files\fileuploader.js" />
+    <Content Include="Ara2\Components\AraUpload\files\fileuploader.min.js" />
+    <Content Include="Ara2\Components\AraUpload\files\loading.gif" />
+    <Content Include="Ara2\Components\AraUpload\files\__MACOSX\._loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NuGet\NuGet.exe" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Esse projeto faz referências a pacotes NuGet que estão ausentes neste computador. Habilite Restauração de Pacotes NuGet para fazer download deles.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <Target Name="PostBuildMacros">
+    <GetAssemblyIdentity AssemblyFiles="$(TargetPath)">
+      <Output TaskParameter="Assemblies" ItemName="Targets" />
+    </GetAssemblyIdentity>
+    <ItemGroup>
+      <VersionNumber Include="@(Targets->'%(Version)')" />
+    </ItemGroup>
+  </Target>
+  <PropertyGroup>
+    <PostBuildEventDependsOn>
+    $(PostBuildEventDependsOn);
+    PostBuildMacros;
+  </PostBuildEventDependsOn>
+    <PostBuildEvent>cd $(ProjectDir)Nuget
+del *.nupkg
+nuget.exe pack $(SolutionName).nuspec -version @(VersionNumber)</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

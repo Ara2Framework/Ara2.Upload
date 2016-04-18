@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>Ara2.Upload</id>
+        <version>$version$</version>
+        <title>Ara2.Upload</title>
+        <authors>rafaelleonel</authors>
+        <owners>rafaelleonel</owners>
+        <licenseUrl>http://www.araframework.com.br/license</licenseUrl>
+        <projectUrl>http://www.araframework.com.br</projectUrl>
+        <requireLicenseAcceptance>true</requireLicenseAcceptance>
+        <description>Componente do AraFramework</description>
+        <copyright>Copyright ©  2016</copyright>
+        <language>pt-BR</language>
+        <dependencies>
+            <dependency id="Ara2" version="1.2.6" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="..\Ara2\Components\AraUpload\AraUpload.js" target="content\Ara2\Components\AraUpload\AraUpload.js" />
+        <file src="..\Ara2\Components\AraUpload\CREDITS.md" target="content\Ara2\Components\AraUpload\CREDITS.md" />
+        <file src="..\Ara2\Components\AraUpload\LICENSE.md" target="content\Ara2\Components\AraUpload\LICENSE.md" />
+
+        <file src="..\Ara2\Components\AraUpload\files\fileuploader.css" target="content\Ara2\Components\AraUpload\files\fileuploader.css" />
+        <file src="..\Ara2\Components\AraUpload\files\fileuploader.js" target="content\Ara2\Components\AraUpload\files\fileuploader.js" />
+        <file src="..\Ara2\Components\AraUpload\files\fileuploader.min.js" target="content\Ara2\Components\AraUpload\files\fileuploader.min.js" />
+        <file src="..\Ara2\Components\AraUpload\files\loading.gif" target="content\Ara2\Components\AraUpload\files\loading.gif" />
+        <file src="..\Ara2\Components\AraUpload\files\__MACOSX\._loading.gif" target="content\Ara2\Components\AraUpload\files\__MACOSX\._loading.gif" />
+      
+        <file src="..\bin\Release\Ara2.Components.Upload.dll" target="lib\net40\Ara2.Components.Upload.dll" />
+    </files>
+</package>

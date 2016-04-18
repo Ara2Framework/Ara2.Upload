@@ -1,0 +1,13 @@
+﻿################################################################################
+# Este arquivo .gitignore foi criado automaticamente pelo Microsoft(R) Visual Studio.
+################################################################################
+
+/Ara2.Upload/bin/Debug
+/Ara2.Upload/obj/Debug
+/Ara2.Upload.Teste/bin
+/Ara2.Upload.Teste/obj
+*.user
+*.json_*
+*.suo
+/Ara2.Upload/obj
+/Ara2.Upload/bin
