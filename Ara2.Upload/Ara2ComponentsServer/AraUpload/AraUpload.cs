@@ -37,23 +37,43 @@ namespace Ara2.Components.Upload
         [AraDevProperty("")]
         public string PathSaveFiles = "";
 
+        #region ReceiveFile
         public delegate bool DReceiveFile(string vFile);
+        AraEvent<DReceiveFile>  _ReceiveFile = new AraEvent<DReceiveFile>();
+
         /// <summary>
         /// Usado para validar se o arquivo é permitido ! Não manipular objetos de interface!!!
         /// </summary>
         [AraDevEvent]
-        public AraEvent<DReceiveFile> ReceiveFile = new AraEvent<DReceiveFile>();
+        public AraEvent<DReceiveFile> ReceiveFile 
+        {
+            get
+            {
+                return _ReceiveFile;
+            }
+            set
+            {
+                _ReceiveFile = value;
+            }
+        }
+        #endregion
 
-
+        #region ReceiveFileComplite
+        AraEvent<DReceiveFileComplite> _ReceiveFileComplite = new AraEvent<DReceiveFileComplite>();
         public delegate void DReceiveFileComplite(string vFile);
         /// <summary>
         /// Quando o arquivo é recebido
         /// </summary>
         [AraDevEvent]
-        public AraEvent<DReceiveFileComplite> ReceiveFileComplite = new AraEvent<DReceiveFileComplite>();
+        public AraEvent<DReceiveFileComplite> ReceiveFileComplite
+        {
+            get { return _ReceiveFileComplite; }
+            set { _ReceiveFileComplite = value; }
+        }
+        #endregion
 
         [AraDevEvent]
-        AraComponentEvent<EventHandler> Click;
+        AraComponentEvent<EventHandler> Click { get; set; }
 
         public override void LoadJS()
         {
