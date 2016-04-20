@@ -58,9 +58,9 @@ namespace Ara2.Components.Upload
         public override void LoadJS()
         {
             Tick vTick = Tick.GetTick();
-            vTick.Session.AddCss("Ara2/Components/Upload/AraUpload/files/fileuploader.css");
-            vTick.Session.AddJs("Ara2/Components/Upload/AraUpload/files/fileuploader.js");
-            vTick.Session.AddJs("Ara2/Components/Upload/AraUpload/AraUpload.js");
+            vTick.Session.AddCss("Ara2/Components/AraUpload/files/fileuploader.css");
+            vTick.Session.AddJs("Ara2/Components/AraUpload/files/fileuploader.js");
+            vTick.Session.AddJs("Ara2/Components/AraUpload/AraUpload.js");
         }
 
 

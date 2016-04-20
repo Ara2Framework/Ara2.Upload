@@ -11,3 +11,4 @@
 *.suo
 /Ara2.Upload/obj
 /Ara2.Upload/bin
+/Ara2.Upload/NuGet/Ara2.Upload.*.nupkg
